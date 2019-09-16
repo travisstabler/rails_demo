@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
@@ -18,9 +16,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', user, class: 'btn btn-secondary', method: :get %></td>
+        <td><%= button_to 'Edit', edit_user_path(user), class: 'btn btn-secondary', method: :get %></td>
+        <td><%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', method: :get %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= button_to 'New User', new_user_path, class: 'btn btn-primary', method: :get %>

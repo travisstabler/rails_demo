@@ -15,6 +15,19 @@ port        ENV.fetch("PORT") { 3000 }
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
 
+# Daemonize the server into the background. Highly suggest that
+# this be combined with “pidfile” and “stdout_redirect”.
+# The default is “false”.
+daemonize true
+
+# Store the pid of the server in the file at “path”.
+pidfile '/var/run/puma.pid'
+
+# Use “path” as the file to store the server info state. This is
+# used by “pumactl” to query and control the server.
+state_path '/var/run/puma.state'
+
+
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
